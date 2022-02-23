@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // Set Up
     var noOfLetters = 0;
-    var answer = "trope";
+    var answer = "TROPE";
     var press = false;
 
     function SetCurrentToFilled(){
@@ -60,8 +60,33 @@ $(document).ready(function () {
 
     function PressEnter(){
         if(noOfLetters == 5){
-            SetUnfilledToCurrent();
-            noOfLetters = 0;
+            var noOfCorrect = 0;
+            for (let i = 0; i < 5; i++) {
+                var filledToSubmit = document.querySelector(".filled");
+                var filledCharacter = filledToSubmit.querySelector("span").innerHTML;
+
+                if (filledCharacter == answer.slice(i, i+1)){
+                    filledToSubmit.classList.add("full-correct");
+                    filledToSubmit.classList.remove("filled");
+                    noOfCorrect++;
+                }
+                else if(answer.indexOf(filledCharacter) != -1){
+                    filledToSubmit.classList.add("part-correct");
+                    filledToSubmit.classList.remove("filled");
+                }
+                else{
+                    filledToSubmit.classList.add("not-correct");
+                    filledToSubmit.classList.remove("filled");
+                }
+            }
+            var unfilled = document.querySelector(".unfilled");
+            if(noOfCorrect == 5){
+                console.log("Correct")
+            }
+            else if(unfilled != null){
+                SetUnfilledToCurrent();
+                noOfLetters = 0;
+            }
         }
         else{
             console.log("Not Full")
@@ -95,7 +120,6 @@ $(document).ready(function () {
     $("*").keyup(function(event){
         if(press){
             press = false;
-            console.log(event.keyCode);
             if(event.keyCode == 8){
                 // Delete
                 PressDelete();

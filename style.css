@@ -45,6 +45,11 @@ a {
     background-color: rgb(230, 220, 80);
 }
 
+.not-correct{
+    border: 0px;
+    background-color: gray;
+}
+
 .current{
     border: 2px solid gray;
 }
