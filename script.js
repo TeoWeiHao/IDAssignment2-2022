@@ -115,9 +115,94 @@ $(document).ready(function () {
     }
 
     // On Button Press
+    $("#aButton").on("click", function(){
+        EnterLetter("A");
+    });
+    $("#bButton").on("click", function(){
+        EnterLetter("B");
+    });
+    $("#cButton").on("click", function(){
+        EnterLetter("C");
+    });
+    $("#dButton").on("click", function(){
+        EnterLetter("D");
+    });
+    $("#eButton").on("click", function(){
+        EnterLetter("E");
+    });
+    $("#fButton").on("click", function(){
+        EnterLetter("F");
+    });
+    $("#gButton").on("click", function(){
+        EnterLetter("G");
+    });
+    $("#hButton").on("click", function(){
+        EnterLetter("H");
+    });
+    $("#iButton").on("click", function(){
+        EnterLetter("I");
+    });
+    $("#jButton").on("click", function(){
+        EnterLetter("J");
+    });
+    $("#kButton").on("click", function(){
+        EnterLetter("K");
+    });
+    $("#lButton").on("click", function(){
+        EnterLetter("L");
+    });
+    $("#mButton").on("click", function(){
+        EnterLetter("M");
+    });
+    $("#nButton").on("click", function(){
+        EnterLetter("N");
+    });
+    $("#oButton").on("click", function(){
+        EnterLetter("O");
+    });
+    $("#pButton").on("click", function(){
+        EnterLetter("P");
+    });
+    $("#qButton").on("click", function(){
+        EnterLetter("Q");
+    });
+    $("#rButton").on("click", function(){
+        EnterLetter("R");
+    });
+    $("#sButton").on("click", function(){
+        EnterLetter("S");
+    });
+    $("#tButton").on("click", function(){
+        EnterLetter("T");
+    });
+    $("#uButton").on("click", function(){
+        EnterLetter("U");
+    });
+    $("#vButton").on("click", function(){
+        EnterLetter("V");
+    });
+    $("#wButton").on("click", function(){
+        EnterLetter("W");
+    });
+    $("#xButton").on("click", function(){
+        EnterLetter("X");
+    });
+    $("#yButton").on("click", function(){
+        EnterLetter("Y");
+    });
+    $("#zButton").on("click", function(){
+        EnterLetter("Z");
+    });
+    $("#deleteButton").on("click", function(){
+        PressDelete();
+    });
+    $("#enterButton").on("click", function(){
+        PressEnter();
+    });
 
     // On Key Press
     $("*").keyup(function(event){
+        console.log(event.keyCode);
         if(press){
             press = false;
             if(event.keyCode == 8){
