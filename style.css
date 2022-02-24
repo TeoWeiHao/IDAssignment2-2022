@@ -18,7 +18,6 @@ a {
 .letter-box{
     width: 60px;
     height: 60px;
-    font-size: 38px;
     text-align: center;
     vertical-align: middle;
 }
@@ -33,29 +32,35 @@ a {
 .full-correct{
     border: 0px;
     background-color: rgb(73, 214, 108);
+    font-size: 36px;
 }
 
 
 .part-correct{
     border: 0px;
     background-color: rgb(230, 220, 80);
+    font-size: 36px;
 }
 
 .not-correct{
     border: 0px;
     background-color: gray;
+    font-size: 36px;
 }
 
 .current{
     border: 2px solid gray;
+    font-size: 34px;
 }
 
 .filled{
     border: 2px solid lightgray;
+    font-size: 34px;
 }
 
 .unfilled{
     border: 2px solid lightgray;
+    font-size: 34px;
 }
 
 #keyboard{

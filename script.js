@@ -203,13 +203,19 @@ $(document).ready(function () {
     var timePress = new Date("January 1, 1970 00:00:00");
     $("*").keyup(function(event){
         var d = new Date();
+        let ms = d.getMilliseconds();
         let s = d.getSeconds();
         let m = d.getMinutes();
         let h = d.getHours();
-        console.log(d);
+        console.log(s, " ", ms);
 
         if (timePress.getMinutes() == m && timePress.getSeconds() == s && timePress.getHours() == h){
-            press = false;
+            if(timePress.getMilliseconds + 5 > ms){
+                press = true;
+            }
+            else{
+                press = false;
+            }
         }
         else{
             press = true;
