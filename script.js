@@ -2,8 +2,7 @@ $(document).ready(function () {
 
     // Set Up
     var noOfLetters = 0;
-    var answer = "TROPE";
-    var press = false;
+    var answer = "ALBAN";
 
     function SetCurrentToFilled(){
         var currentToFilled = document.querySelector(".current");
@@ -201,10 +200,24 @@ $(document).ready(function () {
     });
 
     // On Key Press
+    var timePress = new Date("January 1, 1970 00:00:00");
     $("*").keyup(function(event){
-        console.log(event.keyCode);
-        if(press){
+        var d = new Date();
+        let s = d.getSeconds();
+        let m = d.getMinutes();
+        let h = d.getHours();
+        console.log(d);
+
+        if (timePress.getMinutes() == m && timePress.getSeconds() == s && timePress.getHours() == h){
             press = false;
+        }
+        else{
+            press = true;
+        }
+
+        timePress = d;
+
+        if(press){
             if(event.keyCode == 8){
                 // Delete
                 PressDelete();
@@ -317,9 +330,6 @@ $(document).ready(function () {
                 // Z
                 EnterLetter("Z");
             }
-        }
-        else{
-            press = true;
         }
     });
 });
