@@ -1,25 +1,12 @@
 #bgcolor{
+    background-color: azure;
     min-height: 100px;
 }
 
 #main{
-    max-width: 500px;
-    padding: 10px;
-}
-
-.btn-group-wrap {
     text-align: center;
-}
-
-.btn-group-wrap div{
-    padding-bottom: 6px;
-}
-
-div.btn-group {
-    margin: 0 auto; 
-    text-align: center;
-    width: inherit;
-    display: inline-block;
+    vertical-align: middle;
+    padding-top: 90px;
 }
 
 a {
@@ -66,14 +53,6 @@ a {
     padding-bottom: 5px;
 }
 
-#keyboard{
-    max-width: 560px;
-}
-
-#keyboard *{
-    font-size: 22px;
-}
-
 button{
-    height: 64px;
+    height: 56px;
 }

@@ -10,7 +10,7 @@
   </head>
   <body>
     <!--Header Navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;" width=100%>
         <a class="navbar-brand" href="#">Guess the Word!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,168 +18,106 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Play! <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">History</a>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Play! <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">History</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <div id="bgcolor">
-        <div id="main" class="container">
+    <div id="main" class="container" style="width: 380px; height: 420px;">
 
-            <!--Rows-->
-            <div id="guesses" class="container" style="width: 400px; height: 420px;">
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold current">
-                            <span id="entered"></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
+        <!--Rows-->
+        <div id="guesses" class="container" style="width: 380px; height: 420px;">
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold current">
+                    <span id="entered"></span>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                    <div class="col-2">
-                        <div class="letter-box font-weight-bold unfilled"></div>
-                    </div>
-                </div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
+                <div class="col-2 letter-box font-weight-bold unfilled"></div>
             </div>
         </div>
+    </div>
 
-        <!--Keyboard-->
-        <div id="keyboard" class="container btn-group-wrap">
-            <div class="btn-group" role="group" aria-label="Row 1">
-                <button id="qButton" type="button" class="btn btn-secondary">Q</button>
-                <button id="wButton" type="button" class="btn btn-secondary">W</button>
-                <button id="eButton" type="button" class="btn btn-secondary">E</button>
-                <button id="rButton" type="button" class="btn btn-secondary">R</button>
-                <button id="tButton" type="button" class="btn btn-secondary">T</button>
-                <button id="yButton" type="button" class="btn btn-secondary">Y</button>
-                <button id="uButton" type="button" class="btn btn-secondary">U</button>
-                <button id="iButton" type="button" class="btn btn-secondary">I</button>
-                <button id="oButton" type="button" class="btn btn-secondary">O</button>
-                <button id="pButton" type="button" class="btn btn-secondary">P</button>
-            </div>
-            <div class="btn-group" role="group" aria-label="Row 2">
-                <button id="aButton" type="button" class="btn btn-secondary">A</button>
-                <button id="sButton" type="button" class="btn btn-secondary">S</button>
-                <button id="dButton" type="button" class="btn btn-secondary">D</button>
-                <button id="fButton" type="button" class="btn btn-secondary">F</button>
-                <button id="gButton" type="button" class="btn btn-secondary">G</button>
-                <button id="hButton" type="button" class="btn btn-secondary">H</button>
-                <button id="jButton" type="button" class="btn btn-secondary">J</button>
-                <button id="kButton" type="button" class="btn btn-secondary">K</button>
-                <button id="lButton" type="button" class="btn btn-secondary">L</button>
-            </div>
-            <div class="btn-toolbar" role="toolbar" aria-label="Row 3">
-                <div class="btn-group" role="group" aria-label="Enter">
-                  <button id="enterButton" type="button" class="btn btn-secondary">Enter</button>
-                </div>
-                <div class="btn-group" role="group" aria-label="Row 3">
-                  <button id="zButton" type="button" class="btn btn-secondary">Z</button>
-                  <button id="xButton" type="button" class="btn btn-secondary">X</button>
-                  <button id="cButton" type="button" class="btn btn-secondary">C</button>
-                  <button id="vButton" type="button" class="btn btn-secondary">V</button>
-                  <button id="bButton" type="button" class="btn btn-secondary">B</button>
-                  <button id="nButton" type="button" class="btn btn-secondary">N</button>
-                  <button id="mButton" type="button" class="btn btn-secondary">M</button>
-                </div>
-                <div class="btn-group" role="group" aria-label="Delete">
-                  <button id="deleteButton" type="button" class="btn btn-secondary">Delete</button>
-                </div>
-              </div>
+    <!--Keyboard-->
+    <div class="btn-group" role="group" aria-label="Row 1" style="padding-top: 65px;">
+        <button id="qButton" type="button" class="btn btn-secondary">Q</button>
+        <button id="wButton" type="button" class="btn btn-secondary">W</button>
+        <button id="eButton" type="button" class="btn btn-secondary">E</button>
+        <button id="rButton" type="button" class="btn btn-secondary">R</button>
+        <button id="tButton" type="button" class="btn btn-secondary">T</button>
+        <button id="yButton" type="button" class="btn btn-secondary">Y</button>
+        <button id="uButton" type="button" class="btn btn-secondary">U</button>
+        <button id="iButton" type="button" class="btn btn-secondary">I</button>
+        <button id="oButton" type="button" class="btn btn-secondary">O</button>
+        <button id="pButton" type="button" class="btn btn-secondary">P</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Row 2">
+        <button id="aButton" type="button" class="btn btn-secondary">A</button>
+        <button id="sButton" type="button" class="btn btn-secondary">S</button>
+        <button id="dButton" type="button" class="btn btn-secondary">D</button>
+        <button id="fButton" type="button" class="btn btn-secondary">F</button>
+        <button id="gButton" type="button" class="btn btn-secondary">G</button>
+        <button id="hButton" type="button" class="btn btn-secondary">H</button>
+        <button id="jButton" type="button" class="btn btn-secondary">J</button>
+        <button id="kButton" type="button" class="btn btn-secondary">K</button>
+        <button id="lButton" type="button" class="btn btn-secondary">L</button>
+    </div>
+    <div class="btn-toolbar" role="toolbar" aria-label="Row 3">
+        <div class="btn-group" role="group" aria-label="Enter">
+            <button id="enterButton" type="button" class="btn btn-secondary">Enter</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Row 3">
+            <button id="zButton" type="button" class="btn btn-secondary">Z</button>
+            <button id="xButton" type="button" class="btn btn-secondary">X</button>
+            <button id="cButton" type="button" class="btn btn-secondary">C</button>
+            <button id="vButton" type="button" class="btn btn-secondary">V</button>
+            <button id="bButton" type="button" class="btn btn-secondary">B</button>
+            <button id="nButton" type="button" class="btn btn-secondary">N</button>
+            <button id="mButton" type="button" class="btn btn-secondary">M</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Delete">
+            <button id="deleteButton" type="button" class="btn btn-secondary">Delete</button>
         </div>
     </div>
 
