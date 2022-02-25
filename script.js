@@ -115,7 +115,7 @@ $(document).ready(function () {
                 gameState = false;
 
                 var doneAlert = document.createElement("div");
-                doneAlert.append('Good job! <a id="NewGame" class="alert-link">Play again?</a>');
+                doneAlert.append("Good job!");
                 ALERTDIV.append(doneAlert);
 
                 var alertList = ALERTDIV.querySelectorAll("div");
@@ -140,6 +140,20 @@ $(document).ready(function () {
 
                 var newSpan = newButton.querySelector("span");
                 newSpan.setAttribute("aria-hidden", "true");
+
+                var lottieDiv = document.createElement("div");
+                lottieDiv.setAttribute("class", "container");
+                lottieDiv.setAttribute("style", "text-align: center; vertical-align: middle;");
+
+                var lottieAnimation = document.createElement("lottie-player");
+                lottieAnimation.setAttribute("src", "https://assets3.lottiefiles.com/packages/lf20_lk80fpsm.json");
+                lottieAnimation.setAttribute("background", "transparent");
+                lottieAnimation.setAttribute("speed", "1");
+                lottieAnimation.setAttribute("style", "width: 100%; height: 100px;");
+                lottieAnimation.setAttribute("autoplay", "");
+
+                lottieDiv.append(lottieAnimation);
+                newAlert.append(lottieDiv);
             }
             else if(unfilled != null){
                 SetUnfilledToCurrent();
