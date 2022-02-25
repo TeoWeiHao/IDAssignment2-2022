@@ -1,0 +1,88 @@
+#bgcolor{
+    background-color: azure;
+    min-height: 100px;
+}
+
+#main{
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a {
+    float: left;
+}
+
+.letter-box{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.full-correct{
+    border: 0px;
+    background-color: rgb(73, 214, 108);
+    font-size: 36px;
+}
+
+
+.part-correct{
+    border: 0px;
+    background-color: rgb(230, 220, 80);
+    font-size: 36px;
+}
+
+.not-correct{
+    border: 0px;
+    background-color: gray;
+    font-size: 36px;
+}
+
+.current{
+    border: 2px solid gray;
+    font-size: 34px;
+}
+
+.filled{
+    border: 2px solid lightgray;
+    font-size: 34px;
+}
+
+.unfilled{
+    border: 2px solid lightgray;
+    font-size: 34px;
+}
+
+#alertspace{
+    padding-top: 65px;
+}
+
+#guesses div{
+    padding-bottom: 5px;
+}
+
+#keyboard button{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.letter-box + .letter-box, button + button{
+    margin-left: 2px;
+}
+
+#history{
+    padding-top: 40px;
+}
