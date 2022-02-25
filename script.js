@@ -7,7 +7,6 @@ function generateRandomWord(){
       fetch("https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=5&maxDictionaryCount=-1&minLength=5&maxLength=5&api_key=16440b1037af310afad6f03fbb00b6cadc7d282a3f8ce2a6a", requestOptions)
         .then(response => response.json())
         .then(function(data){
-            console.log(data);
             localStorage.setItem("word", data.word.toUpperCase())
         })
         .catch(error => console.log('error', error));
@@ -18,8 +17,11 @@ $(document).ready(function () {
 
     // Set Up
     var noOfLetters = 0;
-    generateRandomWord();
     var gameState = true;
+    generateRandomWord();
+
+    const ALERTDIV = document.querySelector("#alertspace");
+    const HISTORYDIV = document.querySelector("#history");
 
     function SetCurrentToFilled(){
         var currentToFilled = document.querySelector(".current");
@@ -68,9 +70,6 @@ $(document).ready(function () {
             newCurrent.querySelector("span").innerHTML = "";
             noOfLetters--;
         }
-        else{
-            console.log("None")
-        }
     }
 
     function PressEnter(){
@@ -85,14 +84,30 @@ $(document).ready(function () {
                     filledToSubmit.classList.add("full-correct");
                     filledToSubmit.classList.remove("filled");
                     noOfCorrect++;
+
+                    if(!document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.contains("btn-success")){
+                        document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.add("btn-success");
+                    }
+
+                    if(document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.contains("btn-warning")){
+                        document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.remove("btn-warning");
+                    }
                 }
                 else if(answer.indexOf(filledCharacter) != -1){
                     filledToSubmit.classList.add("part-correct");
                     filledToSubmit.classList.remove("filled");
+
+                    if(!document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.contains("btn-warning")){
+                        document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.add("btn-warning");
+                    }
                 }
                 else{
                     filledToSubmit.classList.add("not-correct");
                     filledToSubmit.classList.remove("filled");
+
+                    if(!document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.contains("btn-dark")){
+                        document.querySelector("#" + filledCharacter.toLowerCase() + "Button").classList.add("btn-dark");
+                    }
                 }
             }
             var unfilled = document.querySelector(".unfilled");
@@ -109,7 +124,32 @@ $(document).ready(function () {
             }
         }
         else{
-            console.log("Not Full");
+            var notFullAlert = document.createElement("div");
+            notFullAlert.append("Not enough letters");
+            ALERTDIV.append(notFullAlert);
+
+            var alertList = ALERTDIV.querySelectorAll("div");
+            var alertNo = ALERTDIV.querySelectorAll("div").length;
+            var newAlert = alertList[alertNo-1];
+
+            newAlert.setAttribute("class", "alert alert-warning");
+            newAlert.setAttribute("role", "alert");
+
+            var alertCloseButton = document.createElement("button");
+            newAlert.append(alertCloseButton);
+
+            var newButton = newAlert.querySelector("button");
+            newButton.setAttribute("type", "button");
+            newButton.setAttribute("class", "close");
+            newButton.setAttribute("data-dismiss", "alert");
+            newButton.setAttribute("aria-label", "Close");
+
+            var alertSpan = document.createElement("span");
+            alertSpan.append("❌");
+            newButton.append(alertSpan);
+
+            var newSpan = newButton.querySelector("span");
+            newSpan.setAttribute("aria-hidden", "true");
         }
     }
 
@@ -128,11 +168,6 @@ $(document).ready(function () {
             SetCurrentToFilled();
 
             noOfLetters++;
-        }
-        else{
-            if(gameState){
-                console.log("Full");
-            }
         }
     }
 
@@ -232,7 +267,6 @@ $(document).ready(function () {
         let m = d.getMinutes();
         let h = d.getHours();
         var keyInput = event.keyCode + " " + h + " " + m + " " + s;
-        console.log(keyInput);
 
         if (timePress == keyInput){
             press = false;

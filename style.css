@@ -63,7 +63,7 @@ a {
     font-size: 34px;
 }
 
-#keyboard{
+#alertspace{
     padding-top: 65px;
 }
 
@@ -71,7 +71,7 @@ a {
     padding-bottom: 5px;
 }
 
-button{
+#keyboard button{
     flex: 1;
     display: flex;
     justify-content: center;
