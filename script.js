@@ -1,8 +1,24 @@
+function generateRandomWord(){
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch("https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=5&maxDictionaryCount=-1&minLength=5&maxLength=5&api_key=16440b1037af310afad6f03fbb00b6cadc7d282a3f8ce2a6a", requestOptions)
+        .then(response => response.json())
+        .then(function(data){
+            console.log(data);
+            localStorage.setItem("word", data.word.toUpperCase())
+        })
+        .catch(error => console.log('error', error));
+
+}
+
 $(document).ready(function () {
 
     // Set Up
     var noOfLetters = 0;
-    var answer = "ALBAN";
+    generateRandomWord();
     var gameState = true;
 
     function SetCurrentToFilled(){
@@ -58,6 +74,7 @@ $(document).ready(function () {
     }
 
     function PressEnter(){
+        var answer = localStorage.getItem("word");
         if(noOfLetters == 5){
             var noOfCorrect = 0;
             for (let i = 0; i < 5; i++) {
