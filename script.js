@@ -31,11 +31,10 @@ $(document).ready(function () {
         WORDSDIV.append(wordP);
     }
     
-    for (let i = (localStorage.getItem("scoreHistory").length%10)-10; i < localStorage.getItem("scoreHistory").length; i+=10) {
+    var scoreList = localStorage.getItem("scoreHistory").split(/.*?/u);
+    for (let i = 0; i < localStorage.getItem("wordHistory").length; i+=5) {
         var scoreP = document.createElement("p");
-        console.log(Math.max(0, i))
-        console.log(i+10)
-        scoreP.append(localStorage.getItem("scoreHistory").slice(Math.max(0, i), i+10));
+        scoreP.append(scoreList[i] + scoreList[i+1] + scoreList[i+2] + scoreList[i+3] + scoreList[i+4]);
         SCOREDIV.append(scoreP);
     }
 
@@ -202,7 +201,7 @@ $(document).ready(function () {
                 gameState = false;
 
                 var notFullAlert = document.createElement("div");
-                notFullAlert.append("Game Over :<");
+                notFullAlert.append("Game Over :< Correct Word: " + localStorage.getItem("word"));
                 ALERTDIV.append(notFullAlert);
 
                 var alertList = ALERTDIV.querySelectorAll("div");
