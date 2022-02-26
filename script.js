@@ -200,6 +200,33 @@ $(document).ready(function () {
             }
             else{
                 gameState = false;
+
+                var notFullAlert = document.createElement("div");
+                notFullAlert.append("Game Over :<");
+                ALERTDIV.append(notFullAlert);
+
+                var alertList = ALERTDIV.querySelectorAll("div");
+                var alertNo = ALERTDIV.querySelectorAll("div").length;
+                var newAlert = alertList[alertNo-1];
+
+                newAlert.setAttribute("class", "alert alert-danger");
+                newAlert.setAttribute("role", "alert");
+
+                var alertCloseButton = document.createElement("button");
+                newAlert.append(alertCloseButton);
+
+                var newButton = newAlert.querySelector("button");
+                newButton.setAttribute("type", "button");
+                newButton.setAttribute("class", "close");
+                newButton.setAttribute("data-dismiss", "alert");
+                newButton.setAttribute("aria-label", "Close");
+
+                var alertSpan = document.createElement("span");
+                alertSpan.append("❌");
+                newButton.append(alertSpan);
+
+                var newSpan = newButton.querySelector("span");
+                newSpan.setAttribute("aria-hidden", "true");
             }
         }
         else{
