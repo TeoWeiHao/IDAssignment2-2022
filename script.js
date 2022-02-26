@@ -199,7 +199,7 @@ $(document).ready(function () {
             }
             else{
                 gameState = false;
-
+                UpdateHistory();
                 var notFullAlert = document.createElement("div");
                 notFullAlert.append("Game Over :< Correct Word: " + localStorage.getItem("word"));
                 ALERTDIV.append(notFullAlert);
